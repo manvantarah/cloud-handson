@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="function/csscommon.css" media="screen"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<title>General Login Page</title>
+	</head>
+	<script src="js/login.js"></script>
+	<body>
+		<div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron">
+						<h2 style="text-align:center" class="italic">MyWebsite Welcomes You</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<div class="well row pt-2x pb-3x bk-light">
+								<div class="col-md-8 col-md-offset-2">
+									<form action=" " name="loginform" class="mt" method=" " enctype='text/json'>
+										<label for="" class="oblique"><span class="glyphicon glyphicon-envelope"></span> Email-ID</label>
+										<input type="text" id="email" placeholder="Enter Email Address" name=" " class="form-control mb">
+										<br><br>
+										<label for="" class="oblique"><span class="glyphicon glyphicon-lock"></span> Password</label>
+										<input type="password" placeholder="Password" name="" id="password" class="form-control mb">
+										<br>
+										<div class="text-center text-light">
+											<a href="#" data-target="#pwdModal" data-toggle="modal" class="text-light" style="float: right;">Forgot Your Password!</a>
+										</div>
+										<div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+											<div class="modal-dialog">
+												<div class="modal-content">
+													<div class="modal-header">
+														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+														<h2 class="text-center"><span class="glyphicon glyphicon-lock"></span> Reset Your Password Here</h2>
+													</div>
+													<div class="modal-body">
+														<div class="col-md-12">
+															<div class="panel panel-default">
+																<div class="panel-body">
+																	<div class="text-center">
+																		<p class="text-danger">Password will be sent to your email ID if Registered!</p>
+																	  	<div class="panel-body">
+																		  	<fieldset>
+																				<div class="form-group">
+																				  	<input class="form-control input-lg" placeholder="E-mail Address" name="email1" id="email1" type="email">
+																			  	</div>
+																			  	<input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit" onclick="loginvalidate1()">
+																		  	</fieldset>
+																	  	</div>
+																  	</div>
+															  	</div>
+														  	</div>
+													  	</div>
+													</div>
+													<div class="modal-footer">
+														<div class="col-md-12">
+															<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+														</div>	
+													</div>
+												</div>
+											</div>
+										</div>
+										<br><br>
+										<input type="submit" name="" class="btn btn-primary btn-block" value="login" id="login" onclick="loginvalidate()"/>
+									</form>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
