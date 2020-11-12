@@ -42,7 +42,7 @@
 
 ##	Step 5)	Run the Django Application with the favourite editor
 
-	$	sudo subl django_app/settings.py
+	$	sudo subl django_project/settings.py
 
 #### Add the host IP address 
 
