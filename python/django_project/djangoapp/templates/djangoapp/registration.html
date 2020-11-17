@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="function/csscommon.css" media="screen"/>
+		<title>Registration Page</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<!--script type="text/javascript" src="registration.js"></script-->
+	</head>
+	<body>
+		<div>  
+			<div class="row">
+				<div class="col-md-12">
+					<div class="jumbotron">
+						<h2 style="text-align:center" class="italic">Member Registration</h2>
+					</div>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3">
+							<div class="well row pt-2x pb-3x bk-light">
+								<div class="col-md-8 col-md-offset-2">
+									
+									<form action="/action_page.php" name="regform" class="mt" method="">
+										<label  class="oblique">First Name</label><br>
+										<input type="text" placeholder="First Name" class="form-control mb" name="firstName">
+										<br>
+										<label  class="oblique">Last Name</label><br>
+										<input type="text" placeholder="Last Name" class="form-control mb" name="lastName">
+										<br>
+										<label  class="oblique"><span class="glyphicon glyphicon-user"></span> User Name</label><br>
+										<input type="text" placeholder="User Name" class="form-control mb" id="username" name="username">
+										<br>
+										<label  class="oblique"><span class="glyphicon glyphicon-envelope"></span> Email-ID</label><br>
+										<input type="email" placeholder="Type Email Address" class="form-control mb" id="email" name="email">
+										<br>
+										<label  class="oblique">Select Role</label><br>
+										<input type="radio" id="true"  value="true" class=" " name="isAdmin">
+										<label for="true"  class="oblique">Admin</label><br>
+            							<input type="radio" id="false"  value="false" class=" " name="isAdmin">
+										<label for="false"  class="oblique">User</label>
+										<br><br>
+										<label  class="oblique"><span class="glyphicon glyphicon-lock"></span> Password</label><br>
+										<input type="password" placeholder="********" class="form-control mb" id="password" name="password">
+										<br>
+										<div class="col-xs-3">
+											<button type="submit" class="btn btn-primary" value="submit">Register</button>
+										</div>
+										<div class="col-xs-3">
+											<button type="reset" value="reset" class="btn btn-warning">Clear</button>
+										</div>
+										<div class="text-center text-light">
+											<a href="{% url 'login' %}" class="text-light" style="float: right;">Already a member? Login</a>
+										</div>
+									</form>
+									
+								</div>
+							</div>
+							
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+	

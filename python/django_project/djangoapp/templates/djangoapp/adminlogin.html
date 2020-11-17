@@ -3,30 +3,28 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="function/csscommon.css" media="screen"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		{% load static %}
-		<!--link rel="stylesheet" type="text/javascript" href="{% static 'js/login.js' %}"-->
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<title>General Login Page</title>
+		<title>Admin Login Page</title>
 	</head>
-	<!--script src="js/login.js"></script-->
+	<script src="js/adminlogin.js"></script>
 	<body>
 		<div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="jumbotron">
-						<h2 style="text-align:center" class="italic">MyWebsite Welcomes You</h2>
+						<h2 style="text-align:center" class="italic">Welcome Admin to MyWebsite</h2>
 					</div>
 					<div class="row">
 						<div class="col-md-6 col-md-offset-3">
 							<div class="well row pt-2x pb-3x bk-light">
 								<div class="col-md-8 col-md-offset-2">
-									<form action=" " name="loginform" class="mt" method=" " enctype='text/json'>
+									<form action=" " name="adloginpage" class="mt" method="put" enctype='text/json'>
 										<label for="" class="oblique"><span class="glyphicon glyphicon-envelope"></span> Email-ID</label>
-										<input type="text" id="email" placeholder="Enter Email Address" name=" " class="form-control mb">
+										<input type="text" id="email" placeholder="Enter Email Address" name="email" class="form-control mb">
 										<br><br>
 										<label for="" class="oblique"><span class="glyphicon glyphicon-lock"></span> Password</label>
-										<input type="password" placeholder="Password" name="" id="password" class="form-control mb">
+										<input type="password" placeholder="Password" name="password" id="password" class="form-control mb">
 										<br>
 										<div class="text-center text-light">
 											<a href="#" data-target="#pwdModal" data-toggle="modal" class="text-light" style="float: right;">Forgot Your Password!</a>
@@ -36,7 +34,7 @@
 												<div class="modal-content">
 													<div class="modal-header">
 														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-														<h2 class="text-center"><span class="glyphicon glyphicon-lock"></span> Reset Your Password Here</h2>
+														<h2 class="text-center"><span class="glyphicon glyphicon-lock"></span> Reset Your Password Admin!</h2>
 													</div>
 													<div class="modal-body">
 														<div class="col-md-12">
@@ -66,11 +64,7 @@
 											</div>
 										</div>
 										<br><br>
-										<input type="submit" name="" class="btn btn-primary btn-block" value="login" id="login" onclick="loginvalidate()"/>
-										<br>
-										<div class="text-center text-light">
-											<a href="{% url 'registration' %}" class="text-light" style="float: right;">Not a Member?</a>
-										</div>
+										<input type="submit" name="" class="btn btn-primary btn-block" value="login" onclick="loginvalidate()">
 									</form>
 								</div>
 							</div>
@@ -80,31 +74,4 @@
 			</div>
 		</div>
 	</body>
-	<script>
-		function loginvalidate() {
-   			var email = document.getElementById("email").value;
-    		var password = document.getElementById("password").value;
-    		if (email == null || email == "") {
-        		alert("Please enter the Email-ID");
-        	return false;
-    	}
-    		if (password == null || password == "") {
-        		alert("Please enter the password");
-        	return false;
-    	}
-    		alert('Login successful');
-    
-		} 
-		function loginvalidate1() {
-    		var email1 = document.getElementById("email1").value;
-    		var password = document.getElementById("password").value;
-    		if (email1 == null || email1 == "") {
-        	alert("Please enter the Email-Id");
-        	return false;
-    	}
-    		alert('Password Sent, Please chek Your Email-ID');
-    
-		} 
-
-	</script>
 </html>
