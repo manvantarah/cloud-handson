@@ -164,7 +164,7 @@
 	$ cd settings.py
 
 	INSTALLED_APPS = [
-    'djangoapp.apps."Paste it here"', 
+    '"App_Name".apps."Paste it here"', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -181,7 +181,7 @@
 
 	$ sudo python3 manage.py runserver
 
-### copy the https link in CLI and paste it in browser URL and the message "The content in the file should e displayed" should be there!!
+### copy the https link in CLI and paste it in browser URL and the message "The content in the file should be displayed" !!
 
 #### Good to Work with Django
 
