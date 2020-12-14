@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+    <title>{% block title %}MyBlog{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <h1>Welcome to bloggers.com!</h1>
+{% if user.is_authenticated %}
+    <button type='submit'><a href="{% url 'signin' %}">Login</a></button>
+    <button type='submit'><a href="{% url 'profile' %}">Profile</a></button>
+{% else %}
+    <button type='submit'><a href="{% url 'signup' %}">Register</a></button>
+{% endif %}
+    {% endblock %}
+</body>
+</html> 

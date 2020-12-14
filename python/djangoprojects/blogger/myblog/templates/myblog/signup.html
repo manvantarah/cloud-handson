@@ -1,0 +1,46 @@
+{% extends 'myblog/index.html' %}
+
+{% block title %}{{block.super}} | Signup {% endblock %}
+
+{% block content %}
+
+<h1>Register Here!</h1>
+{{form.errors}}
+<form method="POST">
+    {% csrf_token %}
+    <!-- {{form.as_p}} -->
+    <div style="border:1px solid rgb(219, 214, 214);width:30%;height:60%">
+    <center>
+    <div style="margin-top:5%;margin-bottom:5%">
+        <div>
+            {{form.username.label}}
+            {{form.username}}
+        </div>
+        <br>
+        <div>
+            {{form.email.label}}
+            {{form.email}}
+        </div>
+        <br>
+        <div>
+            {{form.password1.label}}
+            {{form.password1}}
+        </div>
+        <br>
+        <div>
+            {{form.password2.label}}
+            {{form.password2}}
+        </div>
+    </div>
+    <br>
+    <div style="margin-bottom:5%">
+        <input type='submit' value='Signup'>
+        <div style="margin-left:40%;margin-top:5%">
+           <label>Already have an account?<a href = "{% url 'signin' %}"> Login</a></label>
+        </div>
+    </div>
+    </center>
+    </div>
+</form>
+
+{% endblock %}
