@@ -1,0 +1,33 @@
+{% extends 'myblog/index.html' %}
+
+{% block title %}{{blocl.super}} | Login {% endblock %}
+
+{% block content %}
+
+<h1>Login Here!</h1>
+<div style="border:1px solid rgb(219, 214, 214);width:30%;height:60%">
+    <center>
+        {{form.errors}}
+    <form method="POST" action="{% url 'signin' %}">
+        {% csrf_token %}
+    <div>
+        <div style="margin-top:5%">
+            <input type='text' name='username' placeholder="Username">
+        </div>
+        <br>
+        <div>
+            <input type='password' name='password' placeholder="Password">
+        </div>
+        <br>
+        <input type='submit' value='Signin'>  
+        <div style="margin-left:40%;margin-top:5%">
+            <label>Doesn't have an account?<a href = "{% url 'signup' %}"> Register</a></label>
+        </div> 
+        {% for message in messages %}
+        <p id='messages' style="color:rgb(230, 79, 59)">{{message}}</p>
+        {% endfor %}
+    </div>
+    </form>
+    </center>
+</div> 
+{% endblock %}

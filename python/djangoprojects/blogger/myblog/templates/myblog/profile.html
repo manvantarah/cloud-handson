@@ -1,0 +1,14 @@
+{% extends 'myblog/index.html' %}
+
+{% block title %}{{blocl.super}} | Profile {% endblock %}
+
+{% block content %}
+<img src="{{user.profile.image.url}}">
+<p>{{user.username}}</p>
+<p>{{user.email}}</p>
+{% if user.is_authenticated %}
+<div>
+    <button type="submit"><a href="{% url 'logout' %}">Logout</a></button>
+</div>
+{% endif %}
+{% endblock %}
