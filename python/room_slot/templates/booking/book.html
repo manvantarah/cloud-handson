@@ -1,0 +1,144 @@
+{% extends 'base/base.html'%}
+{% load static %}
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css?family=Oregano&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Freckle+Face&display=swap" rel="stylesheet">
+
+<div class="row">
+    <div class="container">
+        {% if data %}
+    <h3 class="center" style="font-family: 'Oregano', cursive;margin-bottom:7%;margin-top:5%" >Book your Rooms</h3>
+
+        {% for  room in  data %}
+            
+           <div class="col l4 m6 s12">
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{room.room_image.url}}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.7rem">&#x20b9; {{room.price}}</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+                       {{room.room_type}}
+                       
+                    </span>
+
+                </div>
+              <div class="card-action red lighten-2 center">
+              <a href="/book-now/{{room.room_no}}" class="white-text">Book Room Now</a>
+              <!--fieldset>
+                <a href="/book-now/{{room.room_no}}"> <input  id = "Agree"type="radio"name="a1"value=2></a>
+                <label for="Agree">Agree</label>
+              </fieldset-->
+        
+            </div>
+            </div>
+        </div>
+         <!--fieldset>
+                <a href="/book-now/{{room.room_no}}"> <input  id = "Agree"type="radio"name="a1"value=2></a>
+                <label for="Agree">Agree</label>
+        </fieldset-->
+        {% endfor %}
+     
+        {% else %}
+        <div class="card-panel">
+        <p class="center"><i class="material-icons large brown-text">sentiment_very_dissatisfied</i>
+      <h3 style="
+
+    font-family: 'Freckle Face', cursive;
+
+"> Sorry No room available for the given days.</h3>
+     <h4 style="font-family: 'Oregano', cursive;">   Select other days <a href="{% url 'index' %}" class="btn blue white-text" style="font-size:1.5rem">Here</a><h4>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<!-- aminaries -->
+<div class="row">
+    <div class="container">
+        {% if data1 %}
+    <h3 class="center" style="font-family: 'Oregano', cursive;margin-bottom:7%;margin-top:5%" >Book Your Aminaries</h3>
+
+        {% for  games in  data1 %}
+            
+           <div class="col l4 m6 s12">
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{games.aminaries_image.url}}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.7rem">&#x20b9; {{games.price}}</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+                       {{games.aminaries_no}}
+                       
+                    </span>
+
+                </div>
+              <div class="card-action red lighten-2 center">
+              <a href="/gbook-now/{{games.aminaries_no}}" class="white-text">Book Aminaries Now</a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+     
+        {% else %}
+        <div class="card-panel">
+        <p class="center"><i class="material-icons large brown-text">sentiment_very_dissatisfied</i>
+      <h3 style="
+
+    font-family: 'Freckle Face', cursive;
+
+"> Sorry No Aminaries available for the given days.</h3>
+     <h4 style="font-family: 'Oregano', cursive;">   Select other days <a href="{% url 'index' %}" class="btn blue white-text" style="font-size:1.5rem">Here</a><h4>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Food -->
+<div class="row">
+    <div class="container">
+        {% if data2 %}
+    <h3 class="center" style="font-family: 'Oregano', cursive;margin-bottom:7%;margin-top:5%" >Book Your Food Menu</h3>
+
+        {% for  food in  data2 %}
+            
+           <div class="col l4 m6 s12">
+            
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{food.food_image.url}}" alt="">
+                    <a class="btn-floating btn-large halfway-fab waves-effect waves-light red white-text" style="font-size:0.7rem">&#x20b9; {{food.price}}</a>
+                </div>
+                <div class="card-content">
+                    <span class="card-title brown-text">
+                       {{food.food_type}}
+                       
+                    </span>
+
+                </div>
+              <div class="card-action red lighten-2 center">
+              <a href="/fbook-now/{{food.food_no}}" class="white-text">Book Your Food Now</a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+     
+        {% else %}
+        <div class="card-panel">
+        <p class="center"><i class="material-icons large brown-text">sentiment_very_dissatisfied</i>
+      <h3 style="
+
+    font-family: 'Freckle Face', cursive;
+
+"> Sorry No Food Menu available for the given days.</h3>
+     <h4 style="font-family: 'Oregano', cursive;">   Select other days <a href="{% url 'index' %}" class="btn blue white-text" style="font-size:1.5rem">Here</a><h4>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

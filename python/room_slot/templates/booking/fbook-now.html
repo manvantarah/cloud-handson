@@ -1,0 +1,28 @@
+{% extends 'base/base.html'%}
+{% load static %}
+{% block content %}
+<link href="https://fonts.googleapis.com/css?family=Oregano&display=swap" rel="stylesheet">
+<div class="row">
+<div class="col l8 offset-l2 m10 offset-m1 s12">
+    <h3 class="center green-text" style="font-family: 'Oregano', cursive;margin-bottom:7%;margin-top:5%" >Click on the Confirm Booking to book your Food Orders</h3>
+ <div class="card horizontal">
+      <div class="card-image ">
+        <img src="{{data2.food_image.url}}">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <span class="red-text text-lighten-2" style="font-size:2rem">{{data2.food_type}}</span>
+          <p><b>Stay Duration:</b> {{start}} - {{end}}</p>
+          <p><b>Food No: </b> {{data2.food_no}}</p>
+          <p><b>Total Cost of Food: </b> {{no_of_days}}*{{data2.price}} = {{bill}} rupees only</p>
+          <p><b>Room Manager: </b>{{roomManager}}</p>
+        </div>
+        <div class="card-action center grey lighten-5" >
+          <a href="/fconfirm-now-booking" class="blue-text text-darken-2">Confirm Booking</a>
+        </div>
+      </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}
